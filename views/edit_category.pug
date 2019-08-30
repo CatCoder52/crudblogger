@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  
+  .bg-img
+
+  .container.shadow.-mt-16.pb-6
+    h3.display-4.mt-16.pt-6.cen #{title}
+    ul.errors
+      if errors
+        each error, i in errors
+          li.alert.alert-danger #{error.msg}
+    form(method='post', action='/categories/edit/'+category)
+      .form-group
+        label Title:
+        input.form-control(name='title', type='text', value=category.title)
+      .form-group
+        label Description:
+        textarea.form-control(name='description') #{category.description}
+        div.group
+          input.btn.btn-success.mt-8(type='submit', name='submit', value='Save')
+          a.btn.btn-outline-default.mt-8(href='/manage/categories') Back
+          a.btn.btn-danger.category-delete.pull-right.mt-8(href='/manage/categories', data-cat-id=category._id) Delete

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  .container
+    h1 #{title}
+    .row
+      .col-md-12.card.pt-4
+        each article, i in articles
+          a(href='/articles/show/'+article._id)
+            h4 #{article.title}
+          h5 #{article.subtitle}
+          p.post-meta
+            | Posted by #{article.author}
+            | on #{moment(article.created_at).format('MMMM Do YYYY, h:mm:ss a')}
+            hr

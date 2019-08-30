@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  div.bg-imggg.cen
+    .container.card
+      .row.cen.p-3
+        .col-md-9
+          h4.display-3.m-0 #{title}
+        .col-md-3
+          a(class="btn btn-primary animated rubberBand", href="/manage/articles/add") + Add Article
+      table(class='table')
+        tr.thead-light
+          th Article Title
+          th Date Published
+          th Author
+          th
+        each article, i in articles
+          tr
+            td #{article.title}
+            td #{moment(article.created_at).format('MMM Do YYYY, h:mm:ss a')}
+            td #{article.author}
+            td
+              a(class="btn btn-tiny btn-default" href='/manage/articles/edit/'+article._id) Edit

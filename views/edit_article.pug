@@ -1,0 +1,44 @@
+extends layout
+
+block content
+    div.curve
+    div.-mt-20
+      .bg-img-ea.zindex
+      .container.card.shadow.-mt-16.zindex
+        h1.mt-8.row.cen.mb-0 #{title}
+        ul.errors
+          if errors
+            each error, i in errors
+             .alert.alert-danger.alert-dismissible.fade.show.animated.mt-3(role='alert')
+              span.alert-icon.mr-2
+                i.fas.fa-exclamation-circle
+              span.alert-text
+                strong Failed!
+                |  #{error.msg} &mdash;fix it!
+              button.close(type='button' data-dismiss='alert' aria-label='Close')
+                span(aria-hidden='true') &times;
+        form(method='post', action='/articles/edit/'+article._id)
+          .form-group
+            label Title:
+            input.form-control(name='title', type='text', value=article.title)
+          .form-group
+            label Subtitle:
+            input.form-control(name='subtitle', type='text', value=article.subtitle)
+          .form-group
+            label Category
+            select.form-control(name='category')
+              each category, i in categories
+                if(category._id == article.category)
+                  option(value=category._id, selected) #{category.title}
+                else
+                  option(value=category._id) #{category.title}
+          .form-group
+            label Author:
+            input.form-control(name='author', type='text', value=article.author)
+          .form-group
+            label Body
+            textarea.form-control(name='body') #{article.body}
+            div.group
+              input.btn.btn-primary.mt-4(type='submit', name='submit', value='Save')
+              a.btn.btn-outline-default.mt-4(href='/manage/articles') Back
+              a.btn.btn-danger.mt-4.pull-right(href='/manage/articles', data-article-id=article._id) Delete

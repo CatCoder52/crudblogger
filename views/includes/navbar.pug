@@ -1,0 +1,49 @@
+nav#navbar-main.navbar.navbar-horizontal.navbar-transparent.navbar-main.navbar-expand-lg.navbar-light
+  .container
+    a.navbar-brand(href='/')
+      img(src='/assets/img/brand/blue.png')
+    button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbar-collapse' aria-controls='navbar-collapse' aria-expanded='false' aria-label='Toggle navigation')
+      span.navbar-toggler-icon
+    #navbar-collapse.navbar-collapse.navbar-custom-collapse.collapse
+      .navbar-collapse-header
+        .row
+          .col-6.collapse-brand
+            a(href='/')
+              img(src='/assets/img/brand/blue.png')
+          .col-6.collapse-close
+            button.navbar-toggler(type='button' data-toggle='collapse' data-target='#navbar-collapse' aria-controls='navbar-collapse' aria-expanded='false' aria-label='Toggle navigation')
+              span
+              span
+      ul.navbar-nav.mr-auto
+        li.nav-item
+          a.nav-link(href='/')
+            span.nav-link-inner--text Home
+        li.nav-item
+          a.nav-link(href='/articles')
+            span.nav-link-inner--text Articles
+        li.nav-item
+          a.nav-link(href='/categories')
+            span.nav-link-inner--text Categories
+        li.nav-item.dropdown
+          a#navbar-default_dropdown_1.nav-link.nav-link-icon(href='#' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false')
+            i.ni.ni-settings-gear-65.shadow.animated.pulse.infinite 
+            span.nav-link-inner--text.d-lg-none MANAGE
+          .dropdown-menu.dropdown-menu-right(aria-labelledby='navbar-default_dropdown_1')
+            a.dropdown-item(href='/manage/articles') Manage Article
+            a.dropdown-item(href='/manage/categories') Manage Categories
+      hr.d-lg-none
+      ul.navbar-nav.align-items-lg-center.ml-lg-auto
+        li.nav-item
+          a.nav-link.nav-link-icon(href='https://www.instagram.com/designcoderdev/' target='_blank' data-toggle='tooltip' data-original-title='Follow us on Instagram')
+            i.fab.fa-instagram
+            span.nav-link-inner--text.d-lg-none Instagram
+        li.nav-item
+          a.nav-link.nav-link-icon(href='design.coder03@gmail.com' target='_blank' data-toggle='tooltip' data-original-title='Follow us on Twitter')
+            i.fas.fa-envelope
+            span.nav-link-inner--text.d-lg-none Email
+        li.nav-item
+          a.nav-link.nav-link-icon(href='https://github.com/syedsimanta03' target='_blank' data-toggle='tooltip' data-original-title='Star us on Github')
+            i.fab.fa-github
+            span.nav-link-inner--text.d-lg-none Github
+
+

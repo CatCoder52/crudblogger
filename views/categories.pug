@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  .bg-imggg
+  .container.card.-mt-16
+    .row.cen
+      .icon.icon-shape.text-gray.ni.ni-bullet-list-67.p-3
+      h1.cen #{title}
+    ul.list-group.pb-16
+      each category, i in categories
+        li.list-group-item.cen
+          a(href='/articles/category/'+category._id) #{category.title}

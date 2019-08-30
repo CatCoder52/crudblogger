@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  .container.card.mt-20.animated.bounce
+    .row
+      .col-md-9
+       .row
+        div.cen.ml-4
+          .icon.icon-shape.text-gray.ni.ni-bullet-list-67.p-3
+          h1.ml-3 #{title}
+      .col-md-3
+        a(class="btn btn-outline-primary m-3 flex-fill",  href="/manage/categories/add") Add Category
+          
+    != messages()
+    table(class='table table-striped')
+      tr
+        th Category Title
+        th
+      each category, i in categories
+        tr
+        .row.cen
+          td #{category.title}
+          td
+            a(class="btn btn-tiny btn-default" href='/manage/categories/edit/'+category._id) Edit

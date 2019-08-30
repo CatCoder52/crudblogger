@@ -1,0 +1,39 @@
+extends layout
+
+block content
+  .bg-imgg
+  .container.card.-mt-16.animated.bounceInUp
+    .row.cen.mt-3
+     .icon.icon-shape.rounded-circle.bg-primary.text-white.ni.ni-single-copy-04.p-3.mt-3
+     h5.pt-4.ml-4.text-primary.display-4 #{title}
+    ul.errors.m-0
+      if errors
+        each error, i in errors
+         .alert.alert-danger.alert-dismissible.fade.show.animated.mt-3(role='alert')
+          span.alert-icon.mr-2
+            i.fas.fa-exclamation-circle
+          span.alert-text
+            strong Failed!
+            |  #{error.msg} &mdash;fix it!
+          button.close(type='button' data-dismiss='alert' aria-label='Close')
+            span(aria-hidden='true') &times;
+    form.mt-0(method='post', action='/articles/add')
+      .form-group
+        label Title:
+        input.form-control(name='title', type='text')
+      .form-group
+        label Subtitle:
+        input.form-control(name='subtitle', type='text')
+      .form-group
+        label Category
+        select.form-control(name='category')
+          each category, i in categories
+            option(value=category._id) #{category.title}
+      .form-group
+        label Author:
+        input.form-control(name='author', type='text')
+      .form-group
+        label Body
+        textarea.form-control(name='body')
+      input.btn.btn-success.px-12.mb-4(type='submit', name='submit', value='Save')
+      a.btn.btn-outline-primary.px-12.mb-4(href='/manage/articles') Back
