@@ -6,13 +6,11 @@ const expressValidator = require('express-validator');
 const mongoose = require('mongoose');
 
 // Mongoose Connect
-mongoose.connect(
-	'mongodb+srv://samdam100:qaqxa15zRFSu6qfb@cluster0-sgksd.mongodb.net/test?retryWrites=true&w=majority'
-);
+mongoose.connect(process.env.MONGODB_URI);
 const db = mongoose.connection;
 
 // Port
-const port = 3000;
+const port = process.env.PORT || 3000;
 // init app
 const app = express();
 
