@@ -7,6 +7,9 @@
     "serve": "nodemon app.js",
     "start": "node app.js"
   },
+  "engines": {
+    "node": "10.16.3"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
