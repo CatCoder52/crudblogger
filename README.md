@@ -3,9 +3,7 @@
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
 </p>
 
-```
-[app]: Live URL : (https://crudblogger.herokuapp.com/)	"heroku"
-```
+> **Note:** The **Crud Blogger** is a Dynamic Blogging App with CRUD functionalities
 
 
 
@@ -28,7 +26,7 @@ B --> D{CRUD}
 C --> D
 ```
 
-> **Note:** The **Crud Blogger** is kind of Medium clone and I will add more features
+
 
 ## Install:saxophone:
 
